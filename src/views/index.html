@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="readSaveApp">
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/w3-css/w3.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body layout="column" ng-controller="readController">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                READ AND SAVE
+            </div>
+        </md-toolbar>
+        <md-content layout="row" layout-align="center" layout-margin>
+            <div flex-xs flex-gt-xs="30" layout="column">
+                <md-card>
+                    <md-card-title layout="column">
+                        <md-input-container>
+                            <label>Uload file...</label>
+                            <input type="file" read-file="" my-directive-fn="myFunction" multiple="false" />
+                        </md-input-container>
+                        <md-button class="md-raised md-primary">Upload</md-button>
+                    </md-card-title>
+                </md-card>
+            </div>
+            <div flex-xs flex-gt-xs="80" layout="column">
+                <md-card>
+                    <md-card-title layout="column">
+                        <div ng-if="institutions">
+                            <table class="w3-table-all w3-centered">
+                                <tr class="w3-blue">
+                                    <th colspan="3">{{ institutions[0]['A'] }}</th>
+                                </tr>
+                                <tr class="w3-gray">
+                                    <th>{{ institutions[1]['A'] }}</th>
+                                    <th>{{ institutions[1]['B'] }}</th>
+                                    <th>{{ institutions[1]['C'] }}</th>
+                                </tr>
+                                <tr ng-repeat="x in institutions" ng-if="$index > 1">
+                                    <td>{{ x['A'] }}</td>
+                                    <td>{{ x['B'] }}</td>
+                                    <td>{{ x['C'] }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div ng-if="!institutions">
+                            <h1>No Uploaded File...</h1>
+                        </div>
+                    </md-card-title>
+                </md-card>
+
+                <md-card>
+                    <md-card-title layout="column">
+                        <div ng-if="mdAdditions">
+                            <table class="w3-table-all w3-centered">
+                                <tr class="w3-blue">
+                                    <th colspan="3">{{ mdAdditions[0]['A'] }}</th>
+                                </tr>
+                                <tr class="w3-gray">
+                                    <th>{{ mdAdditions[1]['A'] }}</th>
+                                    <th>{{ mdAdditions[1]['B'] }}</th>
+                                    <th>{{ mdAdditions[1]['C'] }}</th>
+                                </tr>
+                                <tr ng-repeat="x in mdAdditions" ng-if="$index > 1">
+                                    <td>{{ x['A'] }}</td>
+                                    <td>{{ x['B'] }}</td>
+                                    <td>{{ x['C'] }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div ng-if="!mdAdditions">
+                            <h1>No Uploaded File...</h1>
+                        </div>
+                    </md-card-title>
+                </md-card>
+
+                <md-card>
+                    <md-card-title layout="column">
+                        <div ng-if="mdUniverses">
+                            <table class="w3-table-all w3-centered">
+                                <tr class="w3-blue">
+                                    <th colspan="3">{{ mdUniverses[0]['A'] }}</th>
+                                </tr>
+                                <tr class="w3-gray">
+                                    <th>{{ mdUniverses[1]['A'] }}</th>
+                                    <th>{{ mdUniverses[1]['B'] }}</th>
+                                    <th>{{ mdUniverses[1]['C'] }}</th>
+                                </tr>
+                                <tr ng-repeat="x in mdUniverses" ng-if="$index > 1">
+                                    <td>{{ x['A'] }}</td>
+                                    <td>{{ x['B'] }}</td>
+                                    <td>{{ x['C'] }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div ng-if="!mdUniverses">
+                            <h1>No Uploaded File...</h1>
+                        </div>
+                    </md-card-title>
+                </md-card>
+            </div>
+        </md-content>
+    </body>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="src/app/read-save-app.js"></script>
+    <script src="src/app/component/read.controller.js"></script>
+    <script src="src/app/component/read.directive.js"></script>
+    <script src="src/app/component/read.service.js"></script>
+    <script type="text/javascript" src="node_modules/xlsx/dist/xlsx.full.min.js"></script>
+
+</html>

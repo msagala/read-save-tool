@@ -1,0 +1,24 @@
+{
+    "name": "read-save-tool",
+    "version": "1.0.0",
+    "description": "read and save record to postgres",
+    "main": "index.js",
+    "scripts": {
+        "start": "node read-save-tool",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Matthew R. Sagala",
+    "license": "ISC",
+    "dependencies": {
+        "angular": "^1.6.6",
+        "angular-animate": "^1.6.6",
+        "angular-aria": "^1.6.6",
+        "angular-file-upload": "^2.5.0",
+        "angular-material": "^1.1.5",
+        "angular-material-data-table": "^0.10.10",
+        "angular-messages": "^1.6.6",
+        "express": "^4.16.2",
+        "w3-css": "^4.0.4",
+        "xlsx": "^0.11.6"
+    }
+}
